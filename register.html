@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuSa Beats - Register</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-container">
+    <h1 class="brand-name">AuSa Beats</h1>
+    <form id="register-form" onsubmit="registerUser(event)">
+      <div class="input-group">
+        <label for="name">Nama</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" class="login-button">Daftar</button>
+    </form>
+    <!-- Teks untuk kembali ke halaman login -->
+    <p class="register-text">
+      Sudah punya akun? <a href="index.html">Login di sini!</a>
+    </p>
+    <p class="footer-text">© 2025 AuSa Beats. All rights reserved.</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
