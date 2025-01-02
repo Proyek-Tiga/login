@@ -1,17 +1,3 @@
-function validateForm(event) {
-    event.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    if (!email || !password) {
-        alert("Email and Password must be filled out!");
-    } else {
-        alert("Login Successful!");
-        // You can add redirection or backend integration here
-    }
-}
-
 function registerUser(event) {
     event.preventDefault(); // Mencegah reload halaman
 
@@ -59,7 +45,7 @@ async function validateForm(event) {
         console.log(result); // Debugging - tampilkan respons backend
   
         // Redirect ke halaman utama (dashboard) setelah login
-        window.location.href = "dashboard.html"; // Sesuaikan dengan halaman Anda
+        window.location.href = "https://proyek-tiga.github.io/FrontendAdmin/"; // Sesuaikan dengan halaman Anda
       } else {
         const error = await response.json();
         // Gagal login
@@ -71,4 +57,8 @@ async function validateForm(event) {
       alert("Gagal menghubungi server. Coba lagi nanti.");
     }
   }
+  
+  // Pasang event listener ke form
+  const form = document.getElementById("login-form");
+  form.addEventListener("submit", validateForm);
   
