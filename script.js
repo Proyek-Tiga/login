@@ -25,19 +25,32 @@ async function validateForm(event) {
         // Cek status respons
         if (response.ok) {
             const result = await response.json();
+
             // Berhasil login
             alert("Login berhasil!");
-            console.log(result); // Debugging - tampilkan respons backend
 
-            // Redirect ke halaman utama (dashboard) setelah login
-            window.location.href = "https://proyek-tiga.github.io/FrontendAdmin/"; // Sesuaikan dengan halaman Anda
+            // Dapatkan role_id dari respons
+            const role_id = result.role_id;
+
+            // Arahkan ke halaman berdasarkan role_id
+            switch (role_id) {
+                case "832be9ea-6a97-4729-abad-e3150e4d03a5": // Ganti dengan ID role admin
+                    window.location.href = "https://proyek-tiga.github.io/FrontendAdmin/";
+                    break;
+                case "138d5ceb-0b26-481d-89d1-5a4c94b895d7": // Ganti dengan ID role pembeli
+                    window.location.href = "https://proyek-tiga.github.io/FrontendPembeli/";
+                    break;
+                case "9c8ec6c5-39e4-45c2-abe2-65024d7bcae8": // Ganti dengan ID role penyelenggara
+                    window.location.href = "https://proyek-tiga.github.io/FrontendPenyelenggara/";
+                    break;
+                default:
+                    alert("Role tidak dikenali.");
+            }
         } else {
             const error = await response.json();
-            // Gagal login
             alert(`Login gagal: ${error.message || "Kesalahan tidak diketahui"}`);
         }
     } catch (err) {
-        // Tangani kesalahan jaringan atau lainnya
         console.error("Kesalahan saat menghubungi server:", err);
         alert("Gagal menghubungi server. Coba lagi nanti.");
     }
