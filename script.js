@@ -38,7 +38,7 @@ async function validateForm(event) {
                     window.location.href = "https://proyek-tiga.github.io/FrontendAdmin/";
                     break;
                 case "138d5ceb-0b26-481d-89d1-5a4c94b895d7": // Ganti dengan ID role pembeli
-                    window.location.href = "https://proyek-tiga.github.io/FrontendPembeli/";
+                    window.location.href = "https://proyek-tiga.github.io/";
                     break;
                 case "9c8ec6c5-39e4-45c2-abe2-65024d7bcae8": // Ganti dengan ID role penyelenggara
                     window.location.href = "https://proyek-tiga.github.io/FrontendPenyelenggara/";
