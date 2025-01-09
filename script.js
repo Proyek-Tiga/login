@@ -26,6 +26,9 @@ async function validateForm(event) {
         if (response.ok) {
             const result = await response.json();
 
+            // Simpan token ke localStorage
+            localStorage.setItem("authToken", result.token);
+
             // Berhasil login
             alert("Login berhasil!");
 
