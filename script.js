@@ -30,7 +30,7 @@ async function validateForm(event) {
             localStorage.setItem("authToken", result.token);
 
             // Berhasil login
-            alert("Login berhasil!");
+            // alert("Login berhasil!");
 
             // Dapatkan role_id dari respons
             const role_id = result.role_id;
